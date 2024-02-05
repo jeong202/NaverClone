@@ -72,6 +72,10 @@
             --color_dic_rgb: 3, 31, 95;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         html,
         body {
             margin: 0;
@@ -94,53 +98,20 @@
             position: relative;
         }
 
-        #header-hamburger {
+        /* header-hamburger */
+        #header-hamburger,
+        #header-naverpay,
+        #header-notice {
             position: absolute;
             top: 18px;
-            /* background-color: blue; */
             display: inline-block;
-            padding: 10px;
             background: none;
             border: none;
             cursor: pointer;
         }
 
-        #header-hamburger:hover::before {
-            z-index: 0;
-            position: absolute;
-            left: 1px;
-            top: 1px;
-            content: '';
-            width: 44px;
-            height: 44px;
-            background-color: var(--color_option_bg);
-            border-radius: 50%;
-        }
-
-        #header-hamburger>div {
-            position: relative;
-            z-index: 1;
-            background-image: url(./sp_main.png);
-            width: 26px;
-            height: 26px;
-            background-position: 0px -333px;
-            background-repeat: no-repeat;
-            background-size: 434px 416px;
-        }
-
-        /*  */
-        #header-naverpay {
-            position: absolute;
-            top: 18px;
-            right: 42px;
-            /* background-color: blue; */
-            display: inline-block;
-            padding: 10px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
+        #header-notice:hover::before,
+        #header-hamburger:hover::before,
         #header-naverpay:hover::before {
             z-index: 0;
             position: absolute;
@@ -153,51 +124,54 @@
             border-radius: 50%;
         }
 
-        #header-naverpay>div {
-            position: relative;
-            z-index: 1;
-            background-image: url(./sp_main.png);
-            width: 26px;
-            height: 26px;
-            background-position: -109px -333px;
-            background-repeat: no-repeat;
-            background-size: 434px 416px;
-        }
-
-        /*  */
-        #header-notice {
-            position: absolute;
-            top: 18px;
-            right: 0px;
-            /* background-color: blue; */
-            display: inline-block;
-            padding: 10px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        #header-notice:hover::before {
-            z-index: 0;
-            position: absolute;
-            left: 1px;
-            top: 1px;
-            content: '';
-            width: 44px;
-            height: 44px;
-            background-color: var(--color_option_bg);
-            border-radius: 50%;
-        }
-
+        #header-hamburger>div,
+        #header-naverpay>div,
         #header-notice>div {
             position: relative;
             z-index: 1;
             background-image: url(./sp_main.png);
+            background-repeat: no-repeat;
+            background-size: 434px 416px;
+        }
+
+
+        #header-hamburger {
+            left: -10px;
+            padding: 10px;
+        }
+
+
+        #header-hamburger>div {
+            width: 26px;
+            height: 26px;
+            background-position: 0px -333px;
+        }
+
+        /*header-naverpay*/
+        #header-naverpay {
+            right: 40px;
+            padding: 10px 8px;
+        }
+
+
+        #header-naverpay>div {
             width: 26px;
             height: 26px;
             background-position: -109px -333px;
-            background-repeat: no-repeat;
-            background-size: 434px 416px;
+        }
+
+        /* header-notice */
+        #header-notice {
+            right: -10px;
+            padding: 10px;
+        }
+
+
+
+        #header-notice>div {
+            width: 26px;
+            height: 26px;
+            background-position: -54px -333px;
         }
 
 
@@ -239,7 +213,12 @@
                     <!-- ::after -->
                 </button>
             </div>
-            <div id="search"></div>
+            <div id="search">
+                <form action="">
+                    <input type="text">
+                    <button></button>
+                </form>
+            </div>
             <div id="nav"></div>
             <div id="main"></div>
 
